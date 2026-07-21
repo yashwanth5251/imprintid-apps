@@ -1,0 +1,10 @@
+{
+  "name": "imprintid-apps-landing",
+  "private": true,
+  "version": "1.0.0",
+  "description": "imprintID Apps static landing page (S3 + CloudFront / Amplify ready)",
+  "scripts": {
+    "start": "npx --yes serve public -p 4173",
+    "preview": "npm start"
+  }
+}

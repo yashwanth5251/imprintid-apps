@@ -1,0 +1,15 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "Static site — no build step"
+    build:
+      commands:
+        - echo "Publishing public/"
+  artifacts:
+    baseDirectory: public
+    files:
+      - "**/*"
+  cache:
+    paths: []

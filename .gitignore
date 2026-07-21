@@ -1,0 +1,8 @@
+# These defaults are the only files GitHub Pages / Amplify need ignored locally
+.DS_Store
+node_modules/
+.env
+.env.*
+*.log
+.aws-sam/
+cloudformation-outputs.json
