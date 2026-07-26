@@ -1,10 +1,22 @@
 {
-  "name": "imprintid-apps-landing",
+  "name": "imprintid-apps",
   "private": true,
-  "version": "1.0.0",
-  "description": "imprintID Apps static landing page (S3 + CloudFront / Amplify ready)",
+  "version": "2.0.0",
+  "type": "module",
+  "description": "imprintID Apps — role-based tools hub and Power BI reports",
   "scripts": {
-    "start": "npx --yes serve public -p 4173",
-    "preview": "npm start"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "vite"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.5.2",
+    "vite": "^6.3.5"
   }
 }

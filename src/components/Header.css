@@ -1,0 +1,129 @@
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0.9rem 1.25rem;
+  backdrop-filter: blur(14px);
+  background: rgba(247, 248, 250, 0.86);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand__logo {
+  width: clamp(110px, 18vw, 150px);
+  height: auto;
+}
+
+.brand__apps {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--blue-deep);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  border: 1px solid rgba(91, 148, 194, 0.35);
+}
+
+.app-nav {
+  display: flex;
+  gap: 0.35rem;
+  margin-left: 0.5rem;
+  flex: 1;
+}
+
+.app-nav a {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--charcoal-soft);
+  text-decoration: none;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.app-nav a:hover {
+  color: var(--blue-deep);
+  background: rgba(91, 148, 194, 0.1);
+}
+
+.app-nav a.active {
+  color: var(--white);
+  background: var(--charcoal);
+}
+
+.app-header__user {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.user-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.15;
+}
+
+.user-chip__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--ink);
+}
+
+.user-chip__role {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.btn-ghost {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--charcoal);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-ghost:hover {
+  border-color: rgba(91, 148, 194, 0.5);
+  color: var(--blue-deep);
+}
+
+@media (max-width: 720px) {
+  .app-header {
+    flex-wrap: wrap;
+  }
+
+  .user-chip {
+    display: none;
+  }
+
+  .app-nav {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+  }
+}

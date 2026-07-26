@@ -1,72 +1,43 @@
-# imprintID Apps — Landing Page
+# imprintID Apps
 
-Static tools hub for [imprintID](https://www.imprintid.com/), organized by category with clickable tool cards. Built for AWS static hosting (S3 + CloudFront, or Amplify).
+React (Vite) hub for internal tools and Power BI reports, with **role-based logins**.
 
-## Local preview
-
-```bash
-npm start
-```
-
-Open http://localhost:4173
-
-## Add / edit tools
-
-Edit `public/data/tools.json`:
-
-```json
-{
-  "id": "shipping",
-  "name": "Shipping Tools",
-  "description": "…",
-  "accent": "blue",
-  "tools": [
-    {
-      "name": "Label Generator",
-      "description": "Create shipping labels",
-      "href": "https://your-tool-url.example",
-      "status": "live"
-    }
-  ]
-}
-```
-
-- `href: "#"` or `status: "coming-soon"` → card shows as Coming soon (not clickable)
-- `status: "live"` + real URL → opens in a new tab
-
-## Deploy to AWS (S3 + CloudFront)
-
-Prerequisites: [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) configured.
+## Run locally
 
 ```bash
-chmod +x scripts/deploy.sh
-
-# 1) Create bucket + CloudFront
-./scripts/deploy.sh bootstrap
-
-# 2) Upload site + invalidate CDN
-./scripts/deploy.sh sync
-
-# Or both:
-./scripts/deploy.sh all
+npm install
+npm run dev
 ```
 
-Optional custom domain:
+Open http://localhost:5173
+
+## Demo accounts
+
+| Role | Username | Password | Sees |
+|------|----------|----------|------|
+| Admin | `admin` | `admin123` | All tools + all Power BI |
+| Shipper | `shipper` | `ship123` | Shipping tools only |
+| Sales & Marketing | `sales` | `sales123` | Sales, ordering & ops tools + sales reports |
+| Ordering | `ordering` | `order123` | Ordering tools |
+| Operations | `ops` | `ops123` | Ops tools + ops reports |
+| Inventory | `inventory` | `inv123` | Inventory reports |
+| Analyst | `analyst` | `data123` | All Power BI reports |
+
+Click a demo chip on the login screen to autofill.
+
+## Customize
+
+- **Users / roles:** `src/data/users.js`
+- **Tools:** `src/data/tools.js`
+- **Power BI reports:** `src/data/reports.js` — set `embedUrl` on each report to the Power BI publish URL
+
+## Build / deploy
 
 ```bash
-DOMAIN_NAME=apps.imprintid.com \
-ACM_CERT_ARN=arn:aws:acm:us-east-1:ACCOUNT:certificate/ID \
-./scripts/deploy.sh bootstrap
+npm run build
 ```
 
-Then point DNS (Route 53 or your registrar) CNAME/ALIAS to the CloudFront domain from stack outputs.
+- **Vercel:** connected repo uses `vercel.json` (Vite → `dist`)
+- **AWS S3/CloudFront:** sync `dist/` after build (see `scripts/deploy.sh` — update sync source to `dist` if needed)
 
-## Amplify Hosting (alternative)
-
-1. Connect this repo in AWS Amplify Hosting  
-2. Amplify uses `amplify.yml` and publishes the `public/` folder  
-3. Add a custom domain in the Amplify console if needed  
-
-## Brand assets
-
-Logos pulled from imprintID CDN (`logo.png`, header banner) live in `public/assets/`. Brand colors: charcoal `#2E2F2E`, blue `#5B94C2`, gold `#DFAC51`.
+Auth is demo/localStorage for now. Swap `AuthContext` for Cognito / Entra ID before production.

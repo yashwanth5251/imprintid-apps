@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-PUBLIC_DIR="${ROOT}/public"
+PUBLIC_DIR="${ROOT}/dist"
 STACK_NAME="${STACK_NAME:-imprintid-apps}"
 REGION="${AWS_REGION:-${AWS_DEFAULT_REGION:-us-east-1}}"
 PROJECT_NAME="${PROJECT_NAME:-imprintid-apps}"
@@ -76,23 +76,25 @@ sync() {
     exit 1
   fi
 
+  echo "Building React app…"
+  (cd "${ROOT}" && npm run build)
+
+  if [[ ! -d "${PUBLIC_DIR}" ]]; then
+    echo "Build output missing: ${PUBLIC_DIR}"
+    exit 1
+  fi
+
   echo "Syncing ${PUBLIC_DIR} → s3://${bucket}"
   aws s3 sync "${PUBLIC_DIR}" "s3://${bucket}" \
     --delete \
     --region "${REGION}" \
     --cache-control "public,max-age=31536000,immutable" \
-    --exclude "index.html" \
-    --exclude "data/*"
+    --exclude "index.html"
 
   aws s3 cp "${PUBLIC_DIR}/index.html" "s3://${bucket}/index.html" \
     --region "${REGION}" \
     --cache-control "public,max-age=60,must-revalidate" \
     --content-type "text/html; charset=utf-8"
-
-  aws s3 sync "${PUBLIC_DIR}/data" "s3://${bucket}/data" \
-    --region "${REGION}" \
-    --cache-control "public,max-age=60,must-revalidate" \
-    --content-type "application/json; charset=utf-8"
 
   echo "Invalidating CloudFront: ${distribution}"
   aws cloudfront create-invalidation \

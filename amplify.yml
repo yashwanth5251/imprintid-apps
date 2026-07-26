@@ -3,13 +3,14 @@ frontend:
   phases:
     preBuild:
       commands:
-        - echo "Static site — no build step"
+        - npm ci
     build:
       commands:
-        - echo "Publishing public/"
+        - npm run build
   artifacts:
-    baseDirectory: public
+    baseDirectory: dist
     files:
       - "**/*"
   cache:
-    paths: []
+    paths:
+      - node_modules/**/*
