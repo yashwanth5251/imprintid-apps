@@ -21,6 +21,9 @@ Open http://localhost:5173
 | Ordering | `ordering` | `order123` | Ordering tools |
 | Operations | `ops` | `ops123` | Ops tools + ops reports |
 | Inventory | `inventory` | `inv123` | Inventory reports |
+| Procurement | `procurement` | `proc123` | Procurement tools + finance reports |
+| Accounts & Finance | `finance` | `fin123` | Finance tools + finance Power BI |
+| Artwork | `artwork` | `art123` | Artwork tools only |
 | Analyst | `analyst` | `data123` | All Power BI reports |
 
 Click a demo chip on the login screen to autofill.

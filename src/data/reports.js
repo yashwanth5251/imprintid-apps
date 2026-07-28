@@ -122,6 +122,57 @@ export const REPORT_GROUPS = [
       },
     ],
   },
+  {
+    id: "finance",
+    name: "Accounts & Finance Reports",
+    description:
+      "AP/AR aging, cash position, P&L, and margin dashboards for finance.",
+    accent: "gold",
+    reports: [
+      {
+        id: "ap-aging",
+        name: "AP Aging",
+        description: "Accounts payable aging by vendor and due bucket.",
+        embedUrl: "",
+        status: "ready",
+      },
+      {
+        id: "ar-aging",
+        name: "AR Aging",
+        description: "Accounts receivable aging by customer and past-due risk.",
+        embedUrl: "",
+        status: "ready",
+      },
+      {
+        id: "cash-position",
+        name: "Cash Position",
+        description: "Bank balances, expected inflows, and near-term outflows.",
+        embedUrl: "",
+        status: "ready",
+      },
+      {
+        id: "profit-and-loss",
+        name: "Profit & Loss",
+        description: "Monthly and YTD P&L with brand and channel breakouts.",
+        embedUrl: "",
+        status: "ready",
+      },
+      {
+        id: "gross-margin",
+        name: "Gross Margin Analysis",
+        description: "Margin by product family, imprint method, and customer.",
+        embedUrl: "",
+        status: "ready",
+      },
+      {
+        id: "vendor-spend",
+        name: "Vendor Spend",
+        description: "Procurement spend concentration and PO commitment trends.",
+        embedUrl: "",
+        status: "ready",
+      },
+    ],
+  },
 ];
 
 export function findReportGroup(groupId) {

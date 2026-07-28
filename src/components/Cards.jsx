@@ -3,7 +3,10 @@ import Icon from "./Icon";
 import "./Cards.css";
 
 export function ToolCard({ tool, categoryId }) {
-  const isSoon = tool.status === "coming-soon" || !tool.href || tool.href === "#";
+  const isInternal = Boolean(tool.internal) || String(tool.href || "").startsWith("/");
+  const isSoon =
+    !isInternal &&
+    (tool.status === "coming-soon" || !tool.href || tool.href === "#");
 
   const body = (
     <>
@@ -34,6 +37,14 @@ export function ToolCard({ tool, categoryId }) {
       <div className="card is-disabled" aria-disabled="true">
         {body}
       </div>
+    );
+  }
+
+  if (isInternal) {
+    return (
+      <Link className="card" to={tool.href}>
+        {body}
+      </Link>
     );
   }
 

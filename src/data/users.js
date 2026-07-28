@@ -43,6 +43,27 @@ export const ROLES = {
     categories: [],
     reportGroups: ["inventory"],
   },
+  procurement: {
+    id: "procurement",
+    label: "Procurement",
+    description: "Procurement tools and related vendor spend reporting.",
+    categories: ["procurement"],
+    reportGroups: ["finance"],
+  },
+  finance: {
+    id: "finance",
+    label: "Accounts & Finance",
+    description: "Finance tools plus Accounts & Finance Power BI reports.",
+    categories: ["accounts-finance"],
+    reportGroups: ["finance"],
+  },
+  artwork: {
+    id: "artwork",
+    label: "Artwork",
+    description: "Artwork proofs, production files, and art workflow tools.",
+    categories: ["artwork"],
+    reportGroups: [],
+  },
   analyst: {
     id: "analyst",
     label: "Analyst",
@@ -89,6 +110,24 @@ export const USERS = [
     password: "inv123",
     name: "Yash",
     role: "inventory",
+  },
+  {
+    username: "procurement",
+    password: "proc123",
+    name: "Rezwan Procurement",
+    role: "procurement",
+  },
+  {
+    username: "finance",
+    password: "fin123",
+    name: "Pranamya Finance",
+    role: "finance",
+  },
+  {
+    username: "artwork",
+    password: "art123",
+    name: "Sharif Artwork",
+    role: "artwork",
   },
   {
     username: "analyst",

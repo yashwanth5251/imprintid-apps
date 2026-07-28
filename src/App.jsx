@@ -7,6 +7,7 @@ import ToolsPage from "./pages/ToolsPage";
 import ReportsPage from "./pages/ReportsPage";
 import ReportGroupPage from "./pages/ReportGroupPage";
 import ReportViewerPage from "./pages/ReportViewerPage";
+import ArtworkLibraryPage from "./pages/ArtworkLibraryPage";
 import { roleHasTools } from "./data/users";
 
 function HomeRedirect() {
@@ -57,6 +58,16 @@ function AppRoutes() {
           <ProtectedRoute>
             <Layout>
               <ReportViewerPage />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/tools/artwork-library"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <ArtworkLibraryPage />
             </Layout>
           </ProtectedRoute>
         }
