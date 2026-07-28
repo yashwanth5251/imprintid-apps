@@ -43,4 +43,9 @@ npm run build
 - **Vercel:** connected repo uses `vercel.json` (Vite → `dist`)
 - **AWS S3/CloudFront:** sync `dist/` after build (see `scripts/deploy.sh` — update sync source to `dist` if needed)
 
-Auth is demo/localStorage for now. Swap `AuthContext` for Cognito / Entra ID before production.
+## Consumables email alerts
+
+Low-stock emails go to `yash@imprintid.com` via `/api/send-low-stock`.
+
+Optional (recommended): set `RESEND_API_KEY` and `RESEND_FROM_EMAIL` in Vercel project env.
+Without Resend, the API falls back to FormSubmit (first send may require inbox confirmation).

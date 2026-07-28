@@ -9,6 +9,7 @@ import ReportGroupPage from "./pages/ReportGroupPage";
 import ReportViewerPage from "./pages/ReportViewerPage";
 import ArtworkLibraryPage from "./pages/ArtworkLibraryPage";
 import LogoVectorizerPage from "./pages/LogoVectorizerPage";
+import ConsumablesAutomationPage from "./pages/ConsumablesAutomationPage";
 import { roleHasTools } from "./data/users";
 
 function HomeRedirect() {
@@ -79,6 +80,16 @@ function AppRoutes() {
           <ProtectedRoute>
             <Layout>
               <LogoVectorizerPage />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/tools/consumables-automation"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <ConsumablesAutomationPage />
             </Layout>
           </ProtectedRoute>
         }

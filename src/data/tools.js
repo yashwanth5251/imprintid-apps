@@ -132,9 +132,10 @@ export const TOOL_CATEGORIES = [
         id: "consumables-automation",
         name: "Consumables Automation",
         description:
-          "Automate reorder triggers and requests for packaging and shop consumables.",
-        href: "#",
-        status: "coming-soon",
+          "Department consumables audit with inventory updates and auto email alerts when stock hits threshold.",
+        href: "/tools/consumables-automation",
+        internal: true,
+        status: "live",
       },
       {
         id: "purchase-orders-tracker",

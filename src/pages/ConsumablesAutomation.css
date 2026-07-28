@@ -1,0 +1,260 @@
+.consumables-toast,
+.consumables-error {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.consumables-toast {
+  background: var(--blue-soft);
+  color: var(--blue-deep);
+  border: 1px solid rgba(91, 148, 194, 0.35);
+}
+
+.consumables-error {
+  background: #fdecea;
+  color: #b42318;
+  border: 1px solid #f3c2bc;
+}
+
+.consumables-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.consumables-stats > div {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+  display: grid;
+  gap: 0.15rem;
+}
+
+.consumables-stats strong {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+}
+
+.consumables-stats span {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.consumables-stats .is-alert {
+  border-color: rgba(180, 35, 24, 0.35);
+  background: #fff5f4;
+}
+
+.consumables-stats .is-alert strong {
+  color: #b42318;
+}
+
+.consumables-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.dept-chips,
+.toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.consumables-panel {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 1.1rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.1rem;
+}
+
+.consumables-panel h2 {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+}
+
+.panel-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.panel-head p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.panel-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.panel-filters input,
+.panel-filters select,
+.consumables-table input {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.55rem 0.7rem;
+  font: inherit;
+  background: var(--white);
+}
+
+.panel-filters input {
+  min-width: 220px;
+}
+
+.consumables-table-wrap {
+  overflow-x: auto;
+}
+
+.consumables-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.consumables-table th,
+.consumables-table td {
+  text-align: left;
+  padding: 0.7rem 0.55rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.consumables-table th {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.consumables-table td strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+}
+
+.consumables-table td small {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.consumables-table tr.is-low {
+  background: #fff8f7;
+}
+
+.consumables-table input[type="number"] {
+  width: 88px;
+}
+
+.unit {
+  margin-left: 0.3rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.status-low {
+  background: #fdecea;
+  color: #b42318;
+}
+
+.status-ok {
+  background: #e8f6ee;
+  color: #0f7a3c;
+}
+
+.status-uncounted,
+.status-no-threshold {
+  background: #f0f0f0;
+  color: var(--muted);
+}
+
+.low-list,
+.alert-log {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--charcoal);
+}
+
+.alert-log li {
+  margin-bottom: 0.55rem;
+}
+
+.alert-log span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.panel-note {
+  margin: 0;
+  color: var(--muted);
+}
+
+.consumables-page .btn-primary,
+.consumables-page .btn-ghost {
+  width: auto;
+  padding: 0.65rem 0.9rem;
+}
+
+.consumables-page .btn-primary {
+  appearance: none;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(120deg, var(--charcoal), #4a5560);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.consumables-page .btn-primary:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.consumables-page .btn-ghost {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--charcoal);
+  font-family: var(--font-display);
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .consumables-table th:nth-child(2),
+  .consumables-table td:nth-child(2) {
+    display: none;
+  }
+}
