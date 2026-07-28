@@ -217,6 +217,15 @@ export const TOOL_CATEGORIES = [
     accent: "blue",
     tools: [
       {
+        id: "logo-vectorizer",
+        name: "AI Logo Vectorizer",
+        description:
+          "Raster-to-vector cleanup for embroidery, screen printing, laser engraving, and digital — with spot/thread matching and export variants.",
+        href: "/tools/logo-vectorizer",
+        internal: true,
+        status: "live",
+      },
+      {
         id: "artwork-proof-generator",
         name: "Artwork Proof Generator",
         description:

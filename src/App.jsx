@@ -8,6 +8,7 @@ import ReportsPage from "./pages/ReportsPage";
 import ReportGroupPage from "./pages/ReportGroupPage";
 import ReportViewerPage from "./pages/ReportViewerPage";
 import ArtworkLibraryPage from "./pages/ArtworkLibraryPage";
+import LogoVectorizerPage from "./pages/LogoVectorizerPage";
 import { roleHasTools } from "./data/users";
 
 function HomeRedirect() {
@@ -68,6 +69,16 @@ function AppRoutes() {
           <ProtectedRoute>
             <Layout>
               <ArtworkLibraryPage />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/tools/logo-vectorizer"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <LogoVectorizerPage />
             </Layout>
           </ProtectedRoute>
         }
