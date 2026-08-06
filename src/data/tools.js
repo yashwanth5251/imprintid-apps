@@ -231,8 +231,8 @@ export const TOOL_CATEGORIES = [
         name: "Artwork Proof Generator",
         description:
           "Create customer-facing proofs with imprint placement, colors, and notes.",
-        href: "#",
-        status: "coming-soon",
+        href: "https://imprintid-proofgenerator.vercel.app/",
+        status: "live",
       },
       {
         id: "production-artwork-generator",
