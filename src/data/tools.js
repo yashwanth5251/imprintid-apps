@@ -272,8 +272,8 @@ export const TOOL_CATEGORIES = [
         name: "Art Revision Tracker",
         description:
           "Track proof versions, customer approvals, and change requests by order.",
-        href: "#",
-        status: "coming-soon",
+        href: "https://imprintid-artrevisiontracker.vercel.app/",
+        status: "live",
       },
       {
         id: "stock-design-browser",
