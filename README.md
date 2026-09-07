@@ -37,15 +37,22 @@ Click a demo chip on the login screen to autofill.
 ## Build / deploy
 
 ```bash
+npm install
 npm run build
+npm start          # Azure-style: serves dist/ + /api on PORT (default 8080)
 ```
 
-- **Vercel:** connected repo uses `vercel.json` (Vite → `dist`)
-- **AWS S3/CloudFront:** sync `dist/` after build (see `scripts/deploy.sh` — update sync source to `dist` if needed)
+- **Azure Web Apps (recommended):** see **[docs/AZURE_DEPLOYMENT.md](docs/AZURE_DEPLOYMENT.md)** — Linux Node 20, Express `server.js`, GitHub Actions workflow
+- **Vercel:** `vercel.json` still works for SPA + `/api`
+- **AWS:** see **[docs/AWS_DEPLOYMENT.md](docs/AWS_DEPLOYMENT.md)**
 
 ## Consumables email alerts
 
 Low-stock emails go to `yash@imprintid.com` via `/api/send-low-stock`.
 
-Optional (recommended): set `RESEND_API_KEY` and `RESEND_FROM_EMAIL` in Vercel project env.
+Set on **Azure App Service → Application settings** (or Vercel env):
+
+- `RESEND_API_KEY`
+- `RESEND_FROM_EMAIL`
+
 Without Resend, the API falls back to FormSubmit (first send may require inbox confirmation).

@@ -1,16 +1,21 @@
 {
   "name": "imprintid-apps",
   "private": true,
-  "version": "2.0.0",
+  "version": "2.1.0",
   "type": "module",
-  "description": "imprintID Apps — role-based tools hub and Power BI reports",
+  "description": "imprintID Apps — role-based tools hub and Power BI reports (Azure Web Apps ready)",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "vite"
+    "start": "node server.js",
+    "start:prod": "npm run build && node server.js"
   },
   "dependencies": {
+    "express": "^5.2.1",
     "imagetracerjs": "^1.2.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
