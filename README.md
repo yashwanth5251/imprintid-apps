@@ -11,22 +11,7 @@ npm run dev
 
 Open http://localhost:5173
 
-## Demo accounts
-
-| Role | Username | Password | Sees |
-|------|----------|----------|------|
-| Admin | `admin` | `admin123` | All tools + all Power BI |
-| Shipper | `shipper` | `ship123` | Shipping tools only |
-| Sales & Marketing | `sales` | `sales123` | Sales, ordering & ops tools + sales reports |
-| Ordering | `ordering` | `order123` | Ordering tools |
-| Operations | `ops` | `ops123` | Ops tools + ops reports |
-| Inventory | `inventory` | `inv123` | Inventory reports |
-| Procurement | `procurement` | `proc123` | Procurement tools + finance reports |
-| Accounts & Finance | `finance` | `fin123` | Finance tools + finance Power BI |
-| Artwork | `artwork` | `art123` | Artwork tools only |
-| Analyst | `analyst` | `data123` | All Power BI reports |
-
-Click a demo chip on the login screen to autofill.
+Sign in with an issued imprintID Apps username and password. Accounts are managed in `src/data/users.js`.
 
 ## Customize
 

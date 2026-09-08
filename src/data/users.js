@@ -73,7 +73,7 @@ export const ROLES = {
   },
 };
 
-/** Demo accounts — replace with real auth (Cognito / Entra) in production */
+/** Issued login accounts — replace with real auth (Entra) in production */
 export const USERS = [
   {
     username: "admin",

@@ -183,7 +183,7 @@ curl https://imprintid-apps.azurewebsites.net/api/health
 open https://imprintid-apps.azurewebsites.net
 ```
 
-Login as `admin` / `admin123`, open Consumables Automation, drop an item below threshold, confirm email to `yash@imprintid.com`.
+Sign in with an issued account, open Consumables Automation, drop an item below threshold, confirm email to `yash@imprintid.com`.
 
 ### 6. Custom domain (imprintIDApps.com or apps.imprintid.com)
 

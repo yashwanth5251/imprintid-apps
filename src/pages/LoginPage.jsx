@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { ROLES, USERS, roleHasTools } from "../data/users";
+import { roleHasTools } from "../data/users";
 import logo from "../assets/logo.png";
 import banner from "../assets/Headerbanner.png";
 import "./Login.css";
@@ -33,12 +33,6 @@ export default function LoginPage() {
     }
     const fallback = roleHasTools(result.user.role) ? "/" : "/reports";
     navigate(location.state?.from?.pathname || fallback, { replace: true });
-  }
-
-  function fillDemo(u) {
-    setUsername(u.username);
-    setPassword(u.password);
-    setError("");
   }
 
   return (
@@ -97,23 +91,6 @@ export default function LoginPage() {
               {loading ? "Signing in…" : "Sign in"}
             </button>
           </form>
-
-          <div className="demo-accounts">
-            <p className="demo-accounts__title">Demo accounts</p>
-            <div className="demo-grid">
-              {USERS.map((u) => (
-                <button
-                  key={u.username}
-                  type="button"
-                  className="demo-chip"
-                  onClick={() => fillDemo(u)}
-                >
-                  <strong>{ROLES[u.role].label}</strong>
-                  <span>{u.username}</span>
-                </button>
-              ))}
-            </div>
-          </div>
         </section>
       </div>
     </div>
