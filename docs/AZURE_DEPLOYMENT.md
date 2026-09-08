@@ -28,8 +28,7 @@ It aligns with your Azure footprint (Business Central / Dynamics 365) so you can
 | `server/lowStockEmail.js` | Shared email logic |
 | `package.json` → `"start": "node server.js"` | Azure startup command |
 | `.env.example` | App settings template |
-| `.github/workflows/azure-webapps.yml` | Deploy on push to `main` |
-| `web.config` | Only if you use Windows App Service (prefer Linux) |
+| `.github/workflows/main_imprintidapps.yml` | Deploy on push to `main` |
 | `docs/AZURE_DEPLOYMENT.md` | This guide |
 
 Local production test:

@@ -27,14 +27,13 @@ npm run build
 npm start          # Azure-style: serves dist/ + /api on PORT (default 8080)
 ```
 
-- **Azure Web Apps (recommended):** see **[docs/AZURE_DEPLOYMENT.md](docs/AZURE_DEPLOYMENT.md)** — Linux Node 20, Express `server.js`, GitHub Actions workflow
-- **Vercel:** `vercel.json` still works for SPA + `/api`
+- **Azure Web Apps:** see **[docs/AZURE_DEPLOYMENT.md](docs/AZURE_DEPLOYMENT.md)** — Linux Node 20, Express `server.js`, GitHub Actions workflow
 
 ## Consumables email alerts
 
 Low-stock emails go to `yash@imprintid.com` via `/api/send-low-stock`.
 
-Set on **Azure App Service → Application settings** (or Vercel env):
+Set on **Azure App Service → Application settings**:
 
 - `RESEND_API_KEY`
 - `RESEND_FROM_EMAIL`
