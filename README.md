@@ -44,7 +44,6 @@ npm start          # Azure-style: serves dist/ + /api on PORT (default 8080)
 
 - **Azure Web Apps (recommended):** see **[docs/AZURE_DEPLOYMENT.md](docs/AZURE_DEPLOYMENT.md)** — Linux Node 20, Express `server.js`, GitHub Actions workflow
 - **Vercel:** `vercel.json` still works for SPA + `/api`
-- **AWS:** see **[docs/AWS_DEPLOYMENT.md](docs/AWS_DEPLOYMENT.md)**
 
 ## Consumables email alerts
 

@@ -4,6 +4,4 @@ dist/
 .env
 .env.*
 *.log
-.aws-sam/
-cloudformation-outputs.json
 .vercel
